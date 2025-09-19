@@ -8,25 +8,23 @@
 <body>
 
     <h2> Concesionario pirámide </h2>
-    <a>Coches</a> 
-    <a> Nuevo </a>
+    <a href="index.php">Coches</a> 
+    <a href="nuevo.php"> Nuevo </a>
 
-    <form action="/" method="get">
+    <form action="index.php" method="get">
         <input type="text" placeholder="Introduce aquí la matrícula">
         <button>Buscar</button>
-
-        <label>Matricula</label>
-        <input type="text" name="matricula">
-        <label>Marca</label>
-        <input type="text" name="marca">
-        <label>Modelo</label>
-        <input type="text" name="modelo">
-        <label>Km</label>
-        <input type="text" name="km">
-        
     </form>
-
-
-    
+    <form action="index.php" method="post">
+        <label style="font-weight: bold;">Matricula</label>
+        <input type="text" name="matricula"><br>
+        <label style="font-weight: bold;">Marca</label>
+        <input type="text" name="marca"><br>
+        <label style="font-weight: bold;">Modelo</label>
+        <input type="text" name="modelo"><br>
+        <label style="font-weight: bold;">Km</label>
+        <input type="text" name="km"><br>
+        <button>guardar</button>
+    </form>
 </body>
 </html>

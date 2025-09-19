@@ -7,16 +7,18 @@
 </head>
 <body>
     <h2> Concesionario pirámide </h2>
-    <a>Coches</a> 
-    <a> Nuevo </a>
+    <a href= "index.php">Coches</a> 
+    <a href= "nuevo.php"> Nuevo </a>
 
-    <form action="/" method="get">
+    <form action="index.php" method="get">
         <input type="text" placeholder="Introduce aquí la matrícula">
         <button>Buscar</button>
     </form>
 
     <ul>
         <?php
+            include "gestorConcesionario.php";
+            include_once "Coche.php";
 
             $coches = array();
 
@@ -26,10 +28,15 @@
                 array_push($coches, $coche);
             }
 
-            foreach($coches as $coche){
-                echo $coches; 
-            }
+            $coche1= new Coche("123", "Opel", "Corsa", "100000");
+            $coche2= new Coche("456", "Renault", "Megane", "5000");
+            $coche3= new Coche("789","Ford","Focus","25000");
 
+            array_push($coches,$coche1, $coche2, $coche3);
+
+            foreach($coches as $coche){
+                echo "<li>". $coche->mostrarDatos() ."</li>". "<br>";
+            }
         ?>
     </ul>    
 
