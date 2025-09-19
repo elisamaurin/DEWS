@@ -8,21 +8,25 @@
 <body>
 
     <?php
-        include GestorNoticias; 
+        include "gestorNoticias.php";
+        include "Noticia.php"; 
 
-        $gestor = new GestorNoticias();
-        $busqueda = isset($_GET["titulo"]) ? $_GET["titulo"] : "";
-        $noticias = $gestor->get_noticias($busqueda);
+        $noticia1= new Noticia("Inicio de curso", "2021-09-15");
+        $noticia2= new Noticia("titulo2", "2021-09-01");
+        $noticias= array($noticia1, $noticia2); 
+
+        $busqueda = $_GET['titulo'];
+
+        mostrarNoticias($noticias, $busqueda);
+        
+        if(!isset($busqueda)){
+            include 'buscador.php';
+        }
+        
     ?>
 
-    <form action="noticias.php" method="get">
-        <input type="text" placeholder= "Pon aquí el título" value="<?=htmlspecialchars($busqueda)?>" name="titulo">  
-        <button type="submit">Enviar</button>
-    </form>
-    
-    <?php foreach($noticias as $x):?>
-        <p><?=$x->$titulo?> -- <?=$x->$fecha?></p>
-    <?php endforeach ?>
+  
+
     
 </body>
 </html>

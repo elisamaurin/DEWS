@@ -1,0 +1,16 @@
+<?php
+    class Coche{
+        public $matricula; 
+        public $marca; 
+        public $modelo; 
+        public $km; 
+
+        public function __construct($matricula, $marca, $modelo, $km){
+            $this->matricula = $matricula; 
+            $this->marca = $marca; 
+            $this->modelo = $modelo; 
+            $this->km = $km; 
+        }
+    }
+
+?>
