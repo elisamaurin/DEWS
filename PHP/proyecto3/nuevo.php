@@ -12,7 +12,7 @@
     <a href="nuevo.php"> Nuevo </a>
 
     <form action="index.php" method="get">
-        <input type="text" placeholder="Introduce aquí la matrícula">
+        <input type="text" name="matricula" placeholder="Introduce aquí la matrícula">
         <button>Buscar</button>
     </form>
     <form action="index.php" method="post">

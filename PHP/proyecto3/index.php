@@ -11,7 +11,7 @@
     <a href= "nuevo.php"> Nuevo </a>
 
     <form action="index.php" method="get">
-        <input type="text" placeholder="Introduce aquí la matrícula">
+        <input type="text" name="matricula" placeholder="Introduce aquí la matrícula">
         <button>Buscar</button>
     </form>
 
@@ -34,9 +34,23 @@
 
             array_push($coches,$coche1, $coche2, $coche3);
 
-            foreach($coches as $coche){
-                echo "<li>". $coche->mostrarDatos() ."</li>". "<br>";
+            if(isset($_GET["matricula"])){
+                $matriculaBuscada = $_GET['matricula'];
+                $cocheEncontrado = null; 
+                foreach($coches as $coche){
+                    if($coche->matricula == $matriculaBuscada){
+                        $cocheEncontrado = $coche;
+                    }
+                }
+                if($cocheEncontrado){
+                 echo "<li>" . $cocheEncontrado->mostrarDatos() . "</li>";
+                }else{
+                    foreach ($coches as $coche) {
+                        echo "<li>" . $coche->mostrarDatos() . "</li><br>";
+                    }    
+                }
             }
+
         ?>
     </ul>    
 

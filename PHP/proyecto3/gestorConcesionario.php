@@ -3,7 +3,7 @@
     include "Coche.php";
 
     function addCoche(){
-        if(isset($_POST["matricula"]) && isset($_POST["marca"]) && isset($_GET["modelo"]) && isset($_GET["km"])){
+        if(isset($_POST["matricula"]) && isset($_POST["marca"]) && isset($_POST["modelo"]) && isset($_POST["km"])){
             $matricula = $_POST['matricula'];
             $marca = $_POST['marca']; 
             $modelo = $_POST['modelo']; 
@@ -12,6 +12,4 @@
             return new Coche($matricula, $marca, $modelo, $km);
         }
     }
-
-    
 ?>
