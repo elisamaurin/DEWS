@@ -1,12 +1,11 @@
 <?php
-$servername = "localhost";
+$servername = "mysql.cvooc68auzgf.us-east-1.rds.amazonaws.com";
 $username = "admin";
-$password = "password";
+$password = "cachorritos11";
+$database = "Concesionario";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password);
+$conn = new mysqli($servername, $username, $password, $database);
 
-// Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
